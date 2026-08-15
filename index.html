@@ -69,6 +69,10 @@
 </head>
 <body>
 
+ <audio id="bgMusic" loop>
+  <source src="birthday.mp4" type="audio/mpeg">
+</audio>
+
 <main>
   <section class="hero">
     <div class="card">
@@ -227,6 +231,9 @@ Happy birthday. ❤️
 
 <script>
 function startSurprise(){
+ const music = document.getElementById('bgMusic');
+  music.play();
+ 
   document.querySelectorAll('.hero')[0].scrollIntoView({behavior:'smooth'});
   setTimeout(()=>document.querySelectorAll('section')[1].scrollIntoView({behavior:'smooth'}),350);
   confetti();

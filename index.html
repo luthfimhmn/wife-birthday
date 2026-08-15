@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Cut ❤️</title>
+<meta name="theme-color" content="#ff7aa8">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:#54283a;background:#fff7fb;overflow-x:hidden;
+  }
+  body:before,body:after{
+    content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(2px);opacity:.45
+  }
+  body:before{width:280px;height:280px;background:#ffd6e7;top:-100px;left:-90px}
+  body:after{width:320px;height:320px;background:#ffe8b6;right:-120px;bottom:-100px}
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 20px;text-align:center}
+  .card{
+    width:min(720px,100%);background:rgba(255,255,255,.86);border:2px solid #fff;
+    border-radius:34px;padding:42px 25px;box-shadow:0 20px 60px rgba(164,74,112,.15);
+    backdrop-filter:blur(8px)
+  }
+  .emoji{font-size:54px;animation:bounce 1.8s infinite}
+  h1{font-size:clamp(42px,10vw,76px);margin:10px 0 0;line-height:1;color:#e95f91}
+  h2{font-size:clamp(28px,7vw,44px);margin:0 0 18px;color:#e95f91}
+  p{font-size:18px;line-height:1.75;margin:10px auto;max-width:600px}
+  .subtitle{font-size:20px;margin:20px auto;color:#805268}
+  button,.btn{
+    border:0;border-radius:999px;padding:15px 25px;background:#f06d9b;color:white;
+    font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(240,109,155,.25);
+    transition:.2s;display:inline-block;text-decoration:none
+  }
+  button:hover,.btn:hover{transform:translateY(-2px) scale(1.02)}
+  section{padding:75px 20px;display:flex;justify-content:center}
+  .section-card{width:min(760px,100%);text-align:center}
+  .heart{font-size:42px;margin-bottom:10px}
+  .memory{
+    background:white;border-radius:28px;padding:28px;margin-top:25px;
+    box-shadow:0 12px 35px rgba(164,74,112,.10);text-align:left
+  }
+  .memory strong{color:#e95f91}
+  .qualities{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+  .quality{background:#fff;border-radius:22px;padding:24px 12px;box-shadow:0 8px 25px rgba(164,74,112,.08)}
+  .quality div{font-size:32px;margin-bottom:8px}
+  .letter{
+    background:#fffef8;border:1px solid #f5e7b9;border-radius:25px;padding:30px;text-align:left;
+    box-shadow:0 10px 35px rgba(120,90,50,.08);white-space:pre-line
+  }
+  .hidden-message{display:none;margin-top:25px;animation:fade .7s ease}
+  .signature{font-size:21px;font-weight:700;color:#e95f91;margin-top:25px}
+  footer{text-align:center;padding:35px 20px 55px;color:#9a6a7e}
+  .photo-placeholder{
+    margin:25px auto;width:min(520px,100%);min-height:230px;border-radius:26px;
+    background:linear-gradient(135deg,#ffd8e8,#ffeac1);display:flex;align-items:center;
+    justify-content:center;font-size:65px;box-shadow:0 10px 30px rgba(164,74,112,.12)
+  }
+  .photo-placeholder small{display:block;font-size:14px;color:#8a6171;margin-top:8px}
+  .photo-wrap{display:flex;justify-content:center}
+  .photo-wrap img{width:min(520px,100%);max-height:520px;object-fit:cover;border-radius:26px;box-shadow:0 10px 30px rgba(164,74,112,.12)}
+  .confetti{position:fixed;top:-20px;pointer-events:none;animation:fall linear forwards;z-index:20}
+  @keyframes bounce{50%{transform:translateY(-8px) rotate(-4deg)}}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+  @media(max-width:600px){.qualities{grid-template-columns:1fr}.card{padding:34px 18px}p{font-size:17px}}
+</style>
+</head>
+<body>
+
+<main>
+  <section class="hero">
+    <div class="card">
+      <div class="emoji">🎀</div>
+      <p class="subtitle">A little something from Luthfi, for...</p>
+      <h1>Cut ❤️</h1>
+      <p class="subtitle">the woman with the biggest heart I know.</p>
+      <button onclick="startSurprise()">Open Your Birthday Surprise ✨</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-card">
+      <div class="heart">💗</div>
+      <h2>Happy Birthday, Cut!</h2>
+      <p>
+        Today is about celebrating you — your kindness, your big heart,
+        your generosity, and that positive spirit you bring into our little family.
+      </p>
+      <div class="photo-placeholder" id="photoBox">
+        📸
+        <div><small>Add a favorite photo of us here</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-card">
+      <div class="heart">👀</div>
+      <h2>Do you remember?</h2>
+      <div class="memory">
+        <p>
+          There was a time in college when you were standing in front of the class,
+          writing on the board.
+        </p>
+        <p>
+          You were probably just doing something completely ordinary...
+          <strong>but that was the first time I noticed you.</strong>
+        </p>
+        <p>
+          Funny how one ordinary moment can become the beginning of something
+          that changes your whole life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-card">
+      <div class="heart">🌷</div>
+      <h2>Three things I love about you</h2>
+      <div class="qualities">
+        <div class="quality"><div>🤲</div><strong>Generous</strong><p>You give so much of yourself to the people you love.</p></div>
+        <div class="quality"><div>💗</div><strong>Big Heart</strong><p>You care deeply, and it shows in the little things.</p></div>
+        <div class="quality"><div>🌈</div><strong>Positive</strong><p>Your strength and positive mental attitude inspire me.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-card">
+      <div class="heart">🏝️</div>
+      <h2>One of my favorite memories</h2>
+      <div class="memory">
+        <p>
+          <strong>Our honeymoon in Bali.</strong>
+        </p>
+        <p>
+          Not because Bali was perfect, but because I got to experience it
+          with you. Looking back, those memories remind me how lucky I am
+          that the person I fell in love with became my wife.
+        </p>
+        <p>And now we have something even more precious: our little family. ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-card">
+      <div class="heart">👨‍👩‍👧</div>
+      <h2>Our little family</h2>
+      <p>
+        From just you and me... to us and <strong>Joya Yahya Muhaimin</strong>.
+      </p>
+      <p>
+        I love the little life we're building together.
+      </p>
+      <div class="photo-placeholder">👨‍👩‍👧<div><small>Add a family photo here</small></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-card">
+      <div class="heart">💌</div>
+      <h2>One more thing...</h2>
+      <p>
+        I know I couldn't give you a fancy present this year.
+        But there is something I wanted to give you anyway.
+      </p>
+      <button onclick="openLetter()">Open my letter 💕</button>
+
+      <div class="hidden-message" id="letter">
+        <div class="letter">
+Cut,
+
+Happy birthday, sayang. ❤️
+
+I know this year I couldn't give you the kind of present I might have wanted to buy for you.
+
+But I don't want that to make today feel any less special.
+
+I want you to know that I see you.
+
+I see how generous you are.
+I see how big your heart is.
+I see the way you keep a positive attitude even when things aren't easy.
+
+And I'm grateful for all of it.
+
+Sometimes I think back to that classroom in college — you standing in front of the class, writing on the board.
+
+That was the first time I noticed you.
+
+I had no idea then that the girl I noticed in that classroom would one day become my wife, the mother of our child, and the person I would build my life with.
+
+We've come a long way since then.
+
+From that classroom...
+to Bali...
+to building our little family with Joya.
+
+And I hope this is only the beginning.
+
+I may not be able to give you everything I want to give you right now,
+but I'll keep working toward it.
+
+Thank you for being you.
+Thank you for being my wife.
+And thank you for being Joya's mom.
+
+I love you, Cut.
+
+Happy birthday. ❤️
+
+<div class="signature">— Luthfi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Made with ❤️ by Luthfi &nbsp;•&nbsp; For Cut's birthday
+</footer>
+
+<script>
+function startSurprise(){
+  document.querySelectorAll('.hero')[0].scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>document.querySelectorAll('section')[1].scrollIntoView({behavior:'smooth'}),350);
+  confetti();
+}
+function openLetter(){
+  const el=document.getElementById('letter');
+  el.style.display='block';
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+  confetti();
+}
+function confetti(){
+  const items=['💗','💕','🌸','✨','🎀','❤️'];
+  for(let i=0;i<22;i++){
+    const s=document.createElement('span');
+    s.className='confetti';
+    s.textContent=items[Math.floor(Math.random()*items.length)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.fontSize=(14+Math.random()*20)+'px';
+    s.style.animationDuration=(2+Math.random()*3)+'s';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),5500);
+  }
+}
+</script>
+</body>
+</html>
